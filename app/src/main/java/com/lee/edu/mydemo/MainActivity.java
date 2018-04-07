@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run()
         {
-            int cutlength = sampleRateInHz/Deci;//300
+            int cutlength = sampleRateInHz/Deci/10;//300
 
             short [] bsRecord = new short[recBufSize];
             short [] bsRecordL = new short[recBufSize/2];
@@ -275,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.w("t-s", String.valueOf(s1));
                     DemoL16(bsRecordL, di, tempIIL, tempQQL,numfre);
                     lastDistL = di[cutlength - 1];
+                    Log.w("t-d", String.valueOf(lastDistL));
 
                     double[] tempIIR = new double[numfre*cutlength];
                     double[] tempQQR = new double[numfre*cutlength];
@@ -369,8 +370,6 @@ public class MainActivity extends AppCompatActivity {
     //本地方法，由java调用
 
     public native String stringFromJNI(int[] I);
-    public native void mycicFromJNI(int[] I,double[] II);
-    //1100*8
     public native void myADistFromJNI(double[] inC,double[] inS,double[] RE);
     public native void DemoNew(int n);
     public native int DemoL(short[] Record,double[] DIST,double[] tempII,double[] tempQQ);

@@ -5,7 +5,6 @@
 #include "LEVD.h"
 
 
-
 Peak findpeaks(double* in,int length)
 {
     Peak Peaks(length);       //
@@ -161,8 +160,6 @@ bool LEVD::levd(double *in,int length) {
             }
             else        //flag
             {
-//                Log.w("LEVD","There");
-                //last
                 n= 0;
                 Pks[0] = last_Pks;
                 type[0] = last_type;

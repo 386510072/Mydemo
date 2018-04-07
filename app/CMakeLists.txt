@@ -53,17 +53,9 @@ add_library( LEVD
              SHARED
              src/main/cpp/sup/levd.cpp )
 
-add_library( Peak
-             SHARED
-             src/main/cpp/sup/Peak.cpp )
 add_library( support
              SHARED
              src/main/cpp/sup/support.cpp )
-
-
-
-
-
 
 
 
@@ -126,7 +118,6 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib}
                        LEVD
-                       Peak
                        ADist
                        MyCic_16)
 

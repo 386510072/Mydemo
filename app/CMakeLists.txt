@@ -20,50 +20,6 @@ add_library( # Sets the name of the library.
              # file are automatically included.
              src/main/cpp/native-lib.cpp )
 
-add_library( MyCic
-             SHARED
-             src/main/cpp/mycic/MyCic.cpp )
-
-add_library( step
-             SHARED
-             src/main/cpp/mycic/step.cpp )
-
-add_library( CICDecimator
-             STATIC
-             src/main/cpp/mycic/CICDecimator.cpp )
-
-
-add_library( FIRCombFilter
-             SHARED
-             src/main/cpp/mycic/FIRCombFilter.cpp )
-
-add_library( MyCic_initialize
-             SHARED
-             src/main/cpp/mycic/MyCic_initialize.cpp )
-
-
-add_library( MyCic_terminate
-             SHARED
-             src/main/cpp/mycic/MyCic_terminate.cpp )
-
-
-add_library( rt_nonfinite
-             SHARED
-             src/main/cpp/mycic/rt_nonfinite.cpp )
-
-add_library( rtGetInf
-             SHARED
-             src/main/cpp/mycic/rtGetInf.cpp )
-
-
-add_library( rtGetNaN
-             SHARED
-             src/main/cpp/mycic/rtGetNaN.cpp )
-
-add_library( SystemCore
-             SHARED
-             src/main/cpp/mycic/SystemCore.cpp )
-
 
 add_library( rt_nonfinite3
              SHARED
@@ -129,61 +85,6 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 
-
-
-target_link_libraries( # Specifies the target library.
-                       FIRCombFilter
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       rtGetNaN
-                       rtGetInf
-                       step)
-
-
-target_link_libraries( # Specifies the target library.
-                       rt_nonfinite
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       rtGetNaN
-                       rtGetInf )
-target_link_libraries( # Specifies the target library.
-                       MyCic_initialize
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       rt_nonfinite )
-target_link_libraries( # Specifies the target library.
-                       step
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       rt_nonfinite)
-target_link_libraries( # Specifies the target library.
-                       SystemCore
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       step
-                      FIRCombFilter
-                      CICDecimator
-                      )
-
-target_link_libraries( # Specifies the target library.
-                       MyCic
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib}
-                       step
-                       SystemCore)
-
 target_link_libraries( # Specifies the target library.
                        rt_nonfinite3
 
@@ -227,7 +128,6 @@ target_link_libraries( # Specifies the target library.
                        LEVD
                        Peak
                        ADist
-                       MyCic
                        MyCic_16)
 
 target_link_libraries( # Specifies the target library.
@@ -236,6 +136,6 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib}
-                       MyCic
                        ADist
-                       support)
+                       support
+                       MyCic_16)

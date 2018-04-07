@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include <android/log.h>
 
-#include "mycic/MyCic.h"
 #include "sup/support.cpp"
 
 #define TAG    "myjni-test" // 这个是自定义的LOG的标识

@@ -9,7 +9,6 @@
 #include <string.h>
 #include <android/log.h>
 #include <jni.h>
-#include "../mycic/MyCic.h"
 #include "LEVD.h"
 #include "Last.h"
 #include "../ADist/ADist.h"
